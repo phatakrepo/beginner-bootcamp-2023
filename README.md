@@ -1,6 +1,6 @@
 # Terraform Beginner Bootcamp 2023
 
-#Sematic versioning !! :mage:
+#Sematic versioning !! :mage1:
 # This project is going to use semantic versioning for tagging
 
   **MAJOR.MINOR.PATCH**: e.g: `1.0.1`
