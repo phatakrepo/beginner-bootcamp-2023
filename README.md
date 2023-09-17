@@ -2,7 +2,7 @@
 
 Terraform boot camp 
 
-#Sematic versioning !! :mage:
+#Sematic versioning !! :mage: :cloud:
 # This project is going to use semantic versioning for tagging
 
   **MAJOR.MINOR.PATCH**: e.g: `1.0.1`
