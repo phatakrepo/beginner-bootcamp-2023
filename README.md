@@ -16,3 +16,8 @@ Terraform boot camp
  https://www.gitpod.io/docs/configure/workspaces/tasks
  https://developer.hashicorp.com/terraform/downloads
  https://en.wikipedia.org/wiki/Shebang_(Unix)
+
+ **Set/List environment variables in bash**
+ https://linuxize.com/post/how-to-set-and-list-environment-variables-in-linux/
+
+    
