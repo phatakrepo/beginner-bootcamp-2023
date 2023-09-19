@@ -16,8 +16,19 @@ Terraform boot camp
  https://www.gitpod.io/docs/configure/workspaces/tasks
  https://developer.hashicorp.com/terraform/downloads
  https://en.wikipedia.org/wiki/Shebang_(Unix)
+ https://github.github.com/gfm/
 
  **Set/List environment variables in bash**
  https://linuxize.com/post/how-to-set-and-list-environment-variables-in-linux/
 
-    
+**Setting up environment variables in aws**
+
+...  
+export AWS_ACCESS_KEY_ID=```markdown
+AKIAIOSFODNN7EXAMPLE
+export AWS_SECRET_ACCESS_KEY=wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
+export AWS_DEFAULT_REGION=us-west-2
+**----**
+
+**Related Documentation**
+https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-envvars.html
