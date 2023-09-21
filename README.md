@@ -42,3 +42,7 @@ https://registry.terraform.io/
 - **Providers**: In Terraform, "providers" are plugins or extensions that define and manage the resources within a specific cloud or service provider. Providers allow Terraform to interact with various APIs and manage resources such as virtual machines, databases, networking components, and more across different cloud platforms and services.
 
 - **Modules**:"Modules" are a way to organize and reuse Terraform configurations. They allow you to encapsulate and abstract parts of your infrastructure code into reusable components, making it easier to manage and maintain complex infrastructure deployments. Modules are particularly useful when you have repetitive patterns in your infrastructure or when you want to share your infrastructure code across multiple projects or teams.
+
+
+**Terraform aws provider**
+https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_bucket
