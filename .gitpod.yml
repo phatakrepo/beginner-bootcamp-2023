@@ -11,7 +11,7 @@ tasks:
     before: |
       source ./bin/terraform_alias
       source ./bin/terraform_cli_install
-      source ./bin/generate_credentials_tfrc
+      
 vscode:
   extensions:
     - amazonwebservices.aws-toolkit-vscode
