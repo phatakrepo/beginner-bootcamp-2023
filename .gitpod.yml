@@ -1,9 +1,9 @@
 tasks:
   - name: terraform
     before: |
-      source ./bin/terraform_alias
       source ./bin/terraform_cli_install
       source ./bin/generate_credentials_tfrc
+      source ./bin/terraform_alias
       
   - name: aws-cli
     env:
