@@ -18,3 +18,8 @@ variable "error_html_path" {
   description = "Path to the index.html file"
   type        = string
 }
+
+variable "content_version" {
+  description = "The desired content version (positive integer, starting at 1)"
+  type        = number
+}
