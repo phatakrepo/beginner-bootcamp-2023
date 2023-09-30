@@ -44,7 +44,11 @@ variable "content_version" {
   type        = number
   default     = 1  # Default to 1 if not provided
   validation {
-    condition     = var.content_version >= 1 && can(var.content_version, "string")
+    condition     = var.content_version >= 1 && can(var.content_version)
     error_message = "Content version must be a positive integer starting at 1."
   }
+}
+variable "assets_path" {
+  description = "Assets to be uploaded to s3"
+  type        = string
 }

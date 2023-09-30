@@ -20,16 +20,25 @@ resource "aws_s3_object" "index_html" {
     ignore_changes = [etag]
   }
 }
-
+resource "aws_s3_object" "upload_assets" {
+  for_each = fileset(var.assets_path, "*.{jpg,png,gif}")
+  bucket = aws_s3_bucket.website_bucket.bucket
+  source = "${var.assets_path}/{each.key}"
+  key    = "assets/${each.key}"
+  #content_type = "text/html"  # Set the content type here
+  etag = filemd5("${var.assets_path}/{each.key}")
+  lifecycle {
+    ignore_changes = [etag]
+  }
+}
 resource "aws_s3_object" "error_html" {
   bucket = aws_s3_bucket.website_bucket.bucket
   source =  var.error_html_path
   key    = "error.html"
   content_type = "text/html"  # Set the content type here
-  
-  etag = filemd5(var.error_html_path)
+   etag = filemd5(var.error_html_path)
   lifecycle {
-    replace_triggered_by = [terrform_data.content_version.output]
+    replace_triggered_by = [terraform_data.content_version.output]
     ignore_changes = [etag]
   }
 }
@@ -57,7 +66,8 @@ resource "aws_s3_bucket_policy" "bucket_policy" {
     ]
   })
 }
-resource "terrform_data" "content_version" {
+resource "terraform_data" "content_version" {
    input = var.content_version
   
 }
+#fileset("${path.root}/public/assets", "*.{jpg,png,gif}")
