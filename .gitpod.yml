@@ -11,6 +11,12 @@ tasks:
     before: |
       source ./bin/aws_cli_install
       source ./bin/terraform_alias
+  - name: terraform
+    before: |
+      npm install --global http-server
+    command: 
+      http-server
+
       
 vscode:
   extensions:

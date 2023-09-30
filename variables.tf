@@ -23,3 +23,8 @@ variable "content_version" {
   description = "The desired content version (positive integer, starting at 1)"
   type        = number
 }
+
+variable "assets_path" {
+  description = "Assets to be uploaded to s3"
+  type        = string
+}
