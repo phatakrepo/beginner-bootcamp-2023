@@ -3,13 +3,24 @@ require 'json'
 require 'pry'
 require 'active_model'
 
+# We will have mock or state having a DB for this local dev server
+#by setting a global variable.You would never use a global variable
+# in prod server
 $home = {}
 
+# This is a ruby class that includes Validations from Active Records.
+#This will represent our home resource as a ruby object.
 class Home
   include ActiveModel::Validations
   attr_accessor :town, :name, :description, :domain_name, :content_version
 
-  validates :town, presence: true
+  validates :town, presence: true inclusion: { in: [ 
+   'melomaniac-mansion'
+   'cooker-cover',
+   'video-valley',
+   'the-nomad-pad',
+   'gamers-grotto',
+  ] }
   validates :name, presence: true
   validates :description, presence: true
   validates :domain_name, 
