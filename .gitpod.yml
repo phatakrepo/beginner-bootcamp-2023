@@ -1,18 +1,26 @@
 tasks:
   - name: terraform
     before: |
+      cd $PROJECT_ROOT
       source ./bin/terraform_cli_install
       source ./bin/generate_credentials_tfrc
       source ./bin/terraform_alias
       cp -pv $PROJECT_ROOT/terraform.tfvars.example $PROJECT_ROOT/terraform.tfvars
+  - name: sinatra
+    before: | 
+      cd terratowns_mock_server
+      bundle install
+      bundle exec ruby server.rb 
   - name: aws-cli
     env:
       AWS_CLI_AUTO_PROMPT: on-partial
     before: |
+      cd $PROJECT_ROOT
       source ./bin/aws_cli_install
       source ./bin/terraform_alias
-  - name: terraform
+  - name: http-server
     before: |
+      cd $PROJECT_ROOT
       npm install --global http-server
     command: 
       http-server
