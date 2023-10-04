@@ -14,13 +14,15 @@ class Home
   include ActiveModel::Validations
   attr_accessor :town, :name, :description, :domain_name, :content_version
 
-  validates :town, presence: true inclusion: { in: [ 
-   'melomaniac-mansion'
-   'cooker-cover',
-   'video-valley',
-   'the-nomad-pad',
-   'gamers-grotto',
-  ] }
+  validates :town, presence: true, inclusion: { 
+  in: [
+    'melomaniac-mansion',
+    'cooker-cover',
+    'video-valley',
+    'the-nomad-pad',
+    'gamers-grotto'
+  ]
+}
   validates :name, presence: true
   validates :description, presence: true
   validates :domain_name, 
@@ -190,7 +192,7 @@ class TerraTownsMockServer < Sinatra::Base
       error 404, "failed to find home with provided uuid and bearer token"
     end
 
-    uuid = $[:uuid]
+    uuid = $uuid
     $home = {}
     { uuid: uuid }.to_json
   end
