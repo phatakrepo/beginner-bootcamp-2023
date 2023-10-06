@@ -24,6 +24,11 @@ func main() {
 	// Prints to standard output
 	fmt.Println("Hello, world!")
 }
+type Config struct {
+	Endpoint string
+	Token string
+	UserUuid string
+}
 // in golang, a titlecase function will get exported.
 func Provider() *schema.Provider {
 	var p *schema.Provider
@@ -65,3 +70,66 @@ func validateUUID(v interface{}, k string) (ws []string, errors []error) {
 	}
 	log.Print("validateUUID:end")
 	return
+
+	func providerConfigure(p *schema.Provider) schema.ConfigureContextFunc {
+		return func(ctx context.Context, d *schema.ResourceData) (interface{}, diag.Diagnostics ) {
+			log.Print("providerConfigure:start")
+			config := Config{
+				Endpoint: d.Get("endpoint").(string),
+				Token: d.Get("token").(string),
+				UserUuid: d.Get("user_uuid").(string),
+			}
+			log.Print("providerConfigure:end")
+			return &config, nil
+		}
+	}
+	func providerConfigure(p *schema.Provider) schema.ConfigureContextFunc {
+		return func(ctx context.Context, d *schema.ResourceData) (interface{}, diag.Diagnostics ) {
+			log.Print("providerConfigure:start")
+			config := Config{
+				Endpoint: d.Get("endpoint").(string),
+				Token: d.Get("token").(string),
+				UserUuid: d.Get("user_uuid").(string),
+			}
+			log.Print("providerConfigure:end")
+			return &config, nil
+		}
+	}
+	func Resource() *schema.Resource {
+		log.Print("Resource:start")
+		resource := &schema.Resource{
+			CreateContext: resourceHouseCreate,
+			ReadContext: resourceHouseRead,
+			UpdateContext: resourceHouseUpdate,
+			DeleteContext: resourceHouseDelete,
+			Schema: map[string]*schema.Schema{
+				"name": {
+					Type: schema.TypeString,
+					Required: true,
+					Description: "Name of home",
+				},
+				"description": {
+					Type: schema.TypeString,
+					Required: true,
+					Description: "Description of home",
+				},
+				"domain_name": {
+					Type: schema.TypeString,
+					Required: true,
+					Description: "Domain name of home eg. *.cloudfront.net",
+				},
+				"town": {
+					Type: schema.TypeString,
+					Required: true,
+					Description: "The town to which the home will belong to",
+				},
+				"content_version": {
+					Type: schema.TypeInt,
+					Required: true,
+					Description: "The content version of the home",
+				},
+			},
+		}
+		log.Print("Resource:start")
+		return resource
+	}
