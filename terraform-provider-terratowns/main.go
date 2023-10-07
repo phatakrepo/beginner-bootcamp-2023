@@ -1,9 +1,8 @@
-//package main: This line declares that this Go file is part of the main package.
-// In Go, the main package is special; it's the entry point for executing a program.
-// The package name main is reserved for the main executable program.
+// package main: Declares the package name. 
+// The main package is special in Go, it's where the execution of the program starts.
 package main
-//import "fmt": The "fmt" package provides functions for formatted input and output,
-//including printing to the console.
+
+// fmt is short format, it contains functions for formatted I/O.
 import (
 	"bytes"
 	"context"
@@ -16,11 +15,13 @@ import (
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/schema"
 	"github.com/hashicorp/terraform-plugin-sdk/v2/plugin"
 )
+// func main(): Defines the main function, the entry point of the app. 
+// When you run the program, it starts executing from this function.
 func main() {
-    plugin.Serve(&plugin.ServeOpts{
+	plugin.Serve(&plugin.ServeOpts{
 		ProviderFunc: Provider,
-	})	
-    // Format.PrintLine
+	})
+	// Format.PrintLine
 	// Prints to standard output
 	fmt.Println("Hello, world!")
 }
@@ -62,6 +63,7 @@ func Provider() *schema.Provider {
 	p.ConfigureContextFunc = providerConfigure(p)
 	return p
 }
+
 func validateUUID(v interface{}, k string) (ws []string, errors []error) {
 	log.Print("validateUUID:start")
 	value := v.(string)
