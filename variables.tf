@@ -7,7 +7,7 @@ variable "terratowns_endpoint" {
  type = string
 }
 
-variable "terratowns_token" {
+variable "terratown_token" {
  type = string
 }
 
