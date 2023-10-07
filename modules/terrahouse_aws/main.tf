@@ -6,11 +6,11 @@ terraform {
     }
   }  
 }
-resource "aws_s3_bucket" "website_bucket" {
-  bucket = var.bucket_name
-
-  tags = {
-    UserUuid  = var.user_uuid
- }
-}
+# resource "aws_s3_bucket" "website_bucket" {
+#   bucket = var.bucket_name
+# }
+#   tags = {
+#     UserUuid  = var.teacherseat_user_uuid
+#  }
+# }
 data "aws_caller_identity" "current" {}

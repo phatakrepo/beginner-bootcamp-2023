@@ -1,7 +1,14 @@
-variable "user_uuid" {
+variable "teacherseat_user_uuid" {
   description = "User UUID"
   type        = string
   
+}
+variable "terratowns_endpoint" {
+ type = string
+}
+
+variable "terratown_token" {
+ type = string
 }
 
 variable "bucket_name" {
