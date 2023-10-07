@@ -26,7 +26,6 @@ provider "terratowns" {
 module "terrahouse_aws" {
   source = "./modules/terrahouse_aws"
   teacherseat_user_uuid = var.teacherseat_user_uuid
-  bucket_name = var.bucket_name
   index_html_path = var.index_html_path
   error_html_path = var.error_html_path
   content_version = var.content_version
