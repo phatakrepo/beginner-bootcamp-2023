@@ -1,4 +1,4 @@
-variable "user_uuid" {
+variable "teacherseat_user_uuid" {
   description = "User UUID"
   type        = string
   
