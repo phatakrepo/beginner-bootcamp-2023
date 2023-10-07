@@ -8,6 +8,7 @@ tasks:
       source ./bin/generate_credentials_tfrc
       source ./bin/terraform_alias
       cp -pv $PROJECT_ROOT/terraform.tfvars.example $PROJECT_ROOT/terraform.tfvars
+      source ./bin/build_provider
   - name: sinatra
     before: | 
       cd terratowns_mock_server

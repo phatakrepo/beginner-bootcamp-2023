@@ -6,18 +6,21 @@ terraform {
      }
    } 
   }
- # cloud {
- #   organization = "terraform_2023_bootcamp"
- #  workspaces {
- #     name = "terrahouse-1"
- #   }
- # }
-#    aws = {
-#       source = "hashicorp/aws"
-#       version = "5.17.0"
+#  cloud {
+#     organization = "terraform_2023_bootcamp"
+#     workspaces {
+#       name = "terra-house-1"
 #     }
-#   }  
-# }
+#}
+terraform {
+  backend "remote" {
+    organization = "terraform_2023_bootcamp"
+    workspaces {
+      name = "terrahouse-1"
+    }
+  }
+}
+
 provider "terratowns" {
   endpoint = var.terratowns_endpoint
   user_uuid = var.teacherseat_user_uuid
@@ -40,7 +43,7 @@ Modders have removed all the originals making this game really fun
 to play (despite that old look graphics). This is my guide that will
 show you how to play arcanum without spoiling the plot.
 DESCRIPTION
-  domain_name = module.home_arcanum_hosting.domain_name
+  domain_name = module.terrahouse_aws.cloudfront_url
   town = "missingo"
-  content_version = var.arcanum.content_version
+  content_version = 1
 }

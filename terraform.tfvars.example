@@ -1,6 +1,6 @@
 terratowns_endpoint="https://terratows.cloud/api"
 #bucket_name="s14wlt1nzrl0ilfvs49hdepw217uxire"
-index_html_path="/workspace/beginner-bootcamp-2023/public/index.html"
-error_html_path="/workspace/beginner-bootcamp-2023/public/error.html"
+index_html_path="/workspace/beginner-bootcamp-2023/public/arcanum/index.html"
+error_html_path="/workspace/beginner-bootcamp-2023/public/arcanum/error.html"
 assets_path="/workspace/beginner-bootcamp-2023/public/assets"
 content_version= 1
