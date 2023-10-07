@@ -20,8 +20,8 @@ terraform {
 # }
 provider "terratowns" {
   endpoint = var.terratowns_endpoint
-  user_uuid = var.terratown_token
-  token = var.teacherseat_user_uuid
+  user_uuid = var.teacherseat_user_uuid
+  token = var.terratown_token
 }
 # module "terrahouse_aws" {
 #   source = "./modules/terrahouse_aws"

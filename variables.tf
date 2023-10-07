@@ -3,6 +3,13 @@ variable "teacherseat_user_uuid" {
   type        = string
   
 }
+variable "terratowns_endpoint" {
+ type = string
+}
+
+variable "terratowns_token" {
+ type = string
+}
 
 variable "bucket_name" {
   description = "The name of the AWS S3 bucket"
